@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES2</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+	
+		$('#submit').click(function() {
+			
+			// empty the #container
+			$('#container').empty();
+			
+			$.post( "rest/notes", $('#c').serialize(), function() {
+						$.getJSON( "rest/notes", function( data ) {
+						
+							var x="";
+							for(var i=0; i<data.length ; i++) {
+								var item = data[i];
+								x=x+"<div id=\"" + item.id + "\"><p>" + item.text +"</p></div>";
+							}
+							$("#container").append(x); 
+						});
+						
+					});
+			return false;
+			});
+		
+	});
+</script>
+</head>
+<body>
+	<form action="./rest/notes" method="POST" id="c">
+		Text: <br />
+		<textarea name="text"></textarea>
+		<br /> <input type="submit" id="submit"></input>
+	</form>
+	<div id="container"></div>
+</body>
+</html>

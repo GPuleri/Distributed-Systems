@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ES1</title>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+//when the document is ready (when the page is loaded) execute this callback
+$(document).ready(function() {
+ // add a click handler (a callback function) to the element with id="link".
+ $('#link').click(function() {
+		// empty the #container
+		$('#container').empty();
+		// display a popup alert message
+		alert("Container is now empty");
+		// perform a get to rest/es1
+		$.get( "rest/es1", function( data ) {
+		 // callback to insert the result in the HTML page (to the #container element), using a h1 tag
+		 $("#container").append("<h1>" + data + "</h1>");
+		 alert( "Done." );
+		});
+	 });
+});
+</script>
+</head>
+<body>
+<div id="container"></div>
+<a href="#" id="link">Click me</a>
+</body>
+</html>
