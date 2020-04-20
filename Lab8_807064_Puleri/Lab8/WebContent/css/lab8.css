@@ -1,0 +1,17 @@
+div[class^=col-] {
+ padding-top: 10px;
+ padding-bottom: 10px;
+ background-color: #00C196;
+ border: 1px solid #FFFF00;
+}
+
+#target {
+ height: 100px;
+ border: 1px solid black;
+ }
+ #list {
+ border: 1px solid black;
+ height: 200px;
+ margin-top: 10px;
+ overflow: auto;
+ }

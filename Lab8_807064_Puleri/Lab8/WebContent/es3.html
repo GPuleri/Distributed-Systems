@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- JQuery CDN (Content Delivery Network) -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta charset="UTF-8">
+		
+		<link href="css/lab8.css" rel="stylesheet">
+		
+		<script type="text/javascript">
+ 			$(document).on("ready", function(){
+ 			
+ 				$('#target').on("swipeleft", function(){
+ 					$('#list').prepend("swipeleft<br />");
+ 		 		});
+ 				$('#target').on("swiperight", function(){
+ 					$('#list').prepend("swiperight<br />");
+ 		 		});
+ 				$('#target').on("tap", function(){
+ 					$('#list').prepend("tap<br />");
+ 		 		});
+ 				$('#target').on("taphold", function(){
+ 					$('#list').prepend("taphold<br />");
+ 		 		});
+ 			});
+ 		</script>
+		
+		<title>Es3</title>
+	</head>
+	<body>
+		<div data-role="page" id="events">
+		 	<div data-role="header">
+		 		<h1>Eventi</h1>
+		 	</div>
+		 	<div role="main" class="ui-content">
+				<div id="target"></div>
+				<div id="list"></div>
+		 	</div>
+		 	<div data-role="footer">
+		 		<h4>&copy; GIANLUCA PULERI</h4>
+		 	</div>
+		</div>
+	</body>
+</html>
